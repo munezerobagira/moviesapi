@@ -1,0 +1,11 @@
+import SampleController from '../controllers/Sample.controller';
+import { Router } from 'express';
+import asyncHandler from '../util/AsyncHandler';
+const router = Router();
+router.get('/', asyncHandler(SampleController.sampleGET));
+router.post('/', asyncHandler(SampleController.samplePOST));
+router.put('/', asyncHandler(SampleController.samplePUT));
+router.delete('/', asyncHandler(SampleController.sampleDELETE));
+router.patch('/', asyncHandler(SampleController.samplePATCH));
+router.get('/error', asyncHandler(SampleController.sampleError));
+export default router;

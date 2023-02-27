@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 21
+    },
+    "auditLog": "/Users/mac/movies-api/LOGS/.25dd6c7208239f0fdcc87a5d278b888847914d36-audit.json",
+    "files": [
+        {
+            "date": 1677471599815,
+            "name": "/Users/mac/movies-api/LOGS/2023-02-27.log",
+            "hash": "0a24ec6944e58c4f2ea5dbaea47a62911ab49df5d3ae4e8a12750a6c871ca7bc"
+        }
+    ],
+    "hashType": "sha256"
+}

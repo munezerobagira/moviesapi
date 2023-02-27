@@ -1,0 +1,54 @@
+{
+  "name": "movies-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./build/server",
+    "dev": "nodemon",
+    "test": "ts-mocha"
+  },
+  "keywords": [],
+  "author": "Munezero Bagira <bagirasostene@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.8.3",
+    "morgan": "^1.10.0",
+    "swagger-ui-express": "^4.6.1",
+    "ts-node": "^10.9.1",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src",
+      "docs"
+    ],
+    "exec": "ts-node ./src/server.ts",
+    "ext": "ts, js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^18.14.2",
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.20",
+    "ts-mocha": "^10.0.0",
+    "tsconfig-paths": "^3.14.2",
+    "typescript": "^4.9.5"
+  }
+}

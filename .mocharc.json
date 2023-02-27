@@ -1,0 +1,6 @@
+{
+  "extension": ["js", "ts"],
+  "color": "true",
+  "watch-files": ["tests/**/*.{js,ts}"],
+  "spec": ["tests/**/*.spec.ts"]
+}

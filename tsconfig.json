@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./build/",
+    "rootDir": "./",
+    "module": "commonjs",
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "lib": ["es2017"],
+    "allowJs": true,
+    "checkJs": true,
+    "maxNodeModuleJsDepth": 1,
+    "esModuleInterop": true,
+
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+
+    "paths": {}
+  },
+  "include": ["./src/**/*", "docs/swagger", "docs/docs.ts", "docs/docs.ts"],
+  "exclude": ["./dist/**/*"]
+}
