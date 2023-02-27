@@ -38,6 +38,6 @@ describe('Enpoint /sample', () => {
     const response = await chai.request(app).get('/sample/error');
     expect(response).to.have.status(500);
     expect(response.body).to.have.property('message');
-    expect(response.body.message).to.equal('Sample DELETE');
+    expect(response.body.message).to.equal('Error occured');
   });
 });

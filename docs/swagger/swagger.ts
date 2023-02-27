@@ -42,7 +42,7 @@ export const swaggerDocument = {
       post: {
         tags: ['sample'],
         summary: 'endpoint to test if server is up',
-        operationId: 'sample-get',
+        operationId: 'sample-post',
         responses: {
           '201': {
             description: 'Server is up',
@@ -52,7 +52,7 @@ export const swaggerDocument = {
       put: {
         tags: ['sample'],
         summary: 'endpoint to test if server is up',
-        operationId: 'sample-get',
+        operationId: 'sample-put',
         responses: {
           '200': {
             description: 'Server is up',
@@ -62,7 +62,7 @@ export const swaggerDocument = {
       patch: {
         tags: ['sample'],
         summary: 'endpoint to test if server is up',
-        operationId: 'sample-get',
+        operationId: 'sample-patch',
         responses: {
           '200': {
             description: 'Server is up',
@@ -72,7 +72,64 @@ export const swaggerDocument = {
       delete: {
         tags: ['sample'],
         summary: 'endpoint to test if server is up',
-        operationId: 'sample-get',
+        operationId: 'sample-delete',
+        responses: {
+          '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+    },
+    '/users': {
+      get: {
+        tags: ['Users'],
+        summary: 'Endpoint for getting all the users',
+        operationId: 'get-users',
+        securityShemes: {},
+        responses: {
+          '200': {
+            description: 'User were fetched successfully',
+          },
+          '404': {
+            description: 'Endpoint is not found',
+          },
+        },
+      },
+      post: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'signup-user',
+        requestBody: {},
+        responses: {
+          '201': {
+            description: 'Server is up',
+          },
+        },
+      },
+      put: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-put',
+        responses: {
+          '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+      patch: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-patch',
+        responses: {
+          '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+      delete: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-delete',
         responses: {
           '200': {
             description: 'Server is up',
