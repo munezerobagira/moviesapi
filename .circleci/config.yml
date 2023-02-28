@@ -1,0 +1,27 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.0.3
+  coveralls: coveralls/coveralls@1.0.6
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/node:16.19
+      - image: circleci/mongo:5.0.6
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Run tests
+          command: npm run coverage
+      - store_artifacts:
+          path: coverage
+      - coveralls/upload
+workflows:
+  sample:
+    jobs:
+      - build-and-test
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}

@@ -6,12 +6,12 @@ Feature
 
 - user can create account
 - user can login
-- user can search movies
-- user can fetch all the movies
 - loggedIn user can create list
 - loggedIn user can delete his lists
 - loggedIn user can update the movies on his/her list
-- user can delete the list
+- loggedin user can delete the list
+- user can fetch all the movies
+- user can search movies
 - user can delete his account
 - user can update his information
 
@@ -24,3 +24,6 @@ Feature
 - Swagger for documentation
 
 Used simple JWT Bear Authentication
+
+Checkout on the swagger documentation of on link below
+[Live link](https://top-100-movies-api.up.railway.app/api-docs)
