@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { onSuccess } from '../util/ResponseFormatter';
+import { onSuccess } from '../utils/ResponseFormatter';
 
 export default class SampleController {
   static async sampleGET(request: Request, response: Response) {

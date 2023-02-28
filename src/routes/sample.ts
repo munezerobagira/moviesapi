@@ -1,6 +1,6 @@
 import SampleController from '../controllers/Sample.controller';
 import { Router } from 'express';
-import asyncHandler from '../util/AsyncHandler';
+import asyncHandler from '../utils/AsyncHandler';
 const router = Router();
 router.get('/', asyncHandler(SampleController.sampleGET));
 router.post('/', asyncHandler(SampleController.samplePOST));

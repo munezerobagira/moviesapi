@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { type ObjectSchema } from 'joi';
-import asyncHandler from '../util/AsyncHandler';
-import { onError } from '../util/ResponseFormatter';
+import asyncHandler from '../utils/AsyncHandler';
+import { onError } from '../utils/ResponseFormatter';
 /**
  * Validate the request,path like body, params using joi schema
  * @param schema

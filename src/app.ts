@@ -2,7 +2,7 @@ import express from 'express';
 import routes from './routes';
 import morgan from 'morgan';
 import { setupSwagger } from '../docs';
-import { notFoundHandler, errorHandler } from './util/requestHandler';
+import { notFoundHandler, errorHandler } from './utils/requestHandler';
 const app = express();
 app.use(morgan('dev'));
 app.use(express.json());

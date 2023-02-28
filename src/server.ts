@@ -1,6 +1,6 @@
 import app from './app';
 import { PORT, MONGO_URL } from './config';
-import { Logger } from './util';
+import { Logger } from './utils';
 import mongoose from 'mongoose';
 mongoose.connect(MONGO_URL).then(() => {
   Logger.info('connected to db');

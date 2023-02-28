@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import path from 'path';
-export const PORT = process.env.PORT || 5000;
-export const ENVIRONMENT = process.env.NODE_ENV || 'development';
+import { getValueWithDefault } from '../utils/getValueWithDefault';
 export const LOGPATH = path.resolve('LOGS');
-export const MONGO_URL = process.env.MONGO_URL + ENVIRONMENT.toUpperCase();
+export const PORT = getValueWithDefault(Number(process.env.PORT), 5000);
+export const ENVIRONMENT = getValueWithDefault(process.env.NODE_ENV, 'development');
+export const MONGO_URL = getValueWithDefault(process.env['MONGO_URL_' + ENVIRONMENT.toUpperCase()], '');
+export const SECRET = getValueWithDefault(process.env.SECRET_KEY, 'secret');
