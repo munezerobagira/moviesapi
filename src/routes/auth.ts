@@ -1,10 +1,10 @@
 import UserController from '../controllers/User.controller';
 import { Router } from 'express';
 import asyncHandler from '../utils/AsyncHandler';
-import { createUserSchema } from '../validations/user';
+import { createUserSchema, loginSchema } from '../validations/user';
 import { requestValidator } from '../middlewares';
 
 const router = Router();
-router.post('/', [requestValidator(createUserSchema)], asyncHandler(UserController.signup));
-router.get('/', asyncHandler(UserController.fetchUsers));
+router.post('/signup', [requestValidator(createUserSchema)], asyncHandler(UserController.signup));
+router.post('/login', [requestValidator(loginSchema)], asyncHandler(UserController.login));
 export default router;

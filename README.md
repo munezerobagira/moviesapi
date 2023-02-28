@@ -2,10 +2,15 @@
 
 Just an API that which lets users set their top 100 movies list.
 
-- user can create list
-- user can signup
+Feature
+
+- user can create account
 - user can login
 - user can search movies
-- user can update the movies on list
+- user can fetch all the movies
+- loggedIn user can create list
+- loggedIn user can delete his lists
+- loggedIn user can update the movies on his/her list
 - user can delete the list
-  Want to try that out, look to this swagger documentation
+- user can delete his account
+- user can update his information

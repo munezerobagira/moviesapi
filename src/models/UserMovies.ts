@@ -3,9 +3,9 @@ import { hash, compare } from 'bcrypt';
 
 const UserMovies = new mongoose.Schema(
   {
-    listId: { type: mongoose.SchemaTypes.UUID, required: true },
-    movieId: { type: mongoose.SchemaTypes.UUID, required: true },
-    userId: { type: mongoose.SchemaTypes.UUID, required: true },
+    listId: { type: String, required: true },
+    movieId: { type: String, required: true },
+    userId: { type: String, required: true },
     rank: { type: Number, unique: true, required: true },
   },
   { timestamps: true }

@@ -11,9 +11,9 @@ export const isLoggedIn = async (request: LoggedInUserRequest, response: Respons
   try {
     const token = request.headers && request.headers.authorization && request.headers.authorization.split(' ')[1];
 
-    const user = await jwt.verify(getValueWithDefault(token, ''), SECRET);
+    const user = (await jwt.verify(getValueWithDefault(token, ''), SECRET)) as unknown as { user: UserInterface };
 
-    request.user = user as unknown as UserInterface;
+    request.user = user.user as unknown as UserInterface;
     return next();
   } catch (error) {
     return onError(response, {

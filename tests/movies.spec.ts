@@ -1,8 +1,8 @@
 import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import mongoose from 'mongoose';
-import app from '../../../src/app';
-import { MONGO_URL } from '../../../src/config';
+import app from '../src/app';
+import { MONGO_URL } from '../src/config';
 chai.use(chaiHttp);
 describe('Enpoint /movies', function () {
   this.timeout(5000);

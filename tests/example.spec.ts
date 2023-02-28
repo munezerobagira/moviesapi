@@ -8,7 +8,7 @@ describe('Enpoint /sample', () => {
     const response = await chai.request(app).get('/sample');
     expect(response).to.have.status(200);
     expect(response.body).to.have.property('message');
-    expect(response.body.message).to.equal('Sample GET');
+    expect(response.body.message).to.equal('Success');
   });
   it('POST /sample should respond with an appropriate message', async () => {
     const response = await chai.request(app).post('/sample');

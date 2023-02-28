@@ -3,7 +3,7 @@ import { onSuccess } from '../utils/ResponseFormatter';
 
 export default class SampleController {
   static async sampleGET(request: Request, response: Response) {
-    return onSuccess(response, { message: 'Sample GET' });
+    return onSuccess(response, {});
   }
   static async samplePOST(request: Request, response: Response) {
     return onSuccess(response, { status: 201, message: 'Sample POST' });

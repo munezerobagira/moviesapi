@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Mocha Tests",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "--require",
+        "${workspaceFolder}/node_modules/ts-node/register",
+        "--colors",
+        "${workspaceFolder}/tests/**/*.spec.ts"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run server",
+      "args": ["src/server.ts"],
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "cwd": "${workspaceFolder}",
+      "internalConsoleOptions": "openOnSessionStart"
+    }
+  ]
+}

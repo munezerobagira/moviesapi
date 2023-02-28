@@ -7,17 +7,13 @@ import asyncHandler from '../utils/AsyncHandler';
 const router = Router();
 router.get('/', asyncHandler(MovieListController.userList));
 router.post('/', asyncHandler(MovieListController.createList));
-router.get(
-  '/:listId/',
+router.get('/:listId', [requestValidator(listIdSchema, 'params')], asyncHandler(MovieListController.getListMovies));
+router.post(
+  '/:listId',
   [requestValidator(listIdSchema, 'params'), requestValidator(movieSchema)],
   asyncHandler(MovieListController.addMovie)
 );
-router.post(
-  '/:listId/',
-  [requestValidator(listIdSchema, 'params'), requestValidator(movieSchema)],
-  asyncHandler(MovieListController.addMovie)
-);
-router.post(
+router.delete(
   '/:listId/:movieId',
   [requestValidator(movieListSchema, 'params')],
   asyncHandler(MovieListController.removeMovie)

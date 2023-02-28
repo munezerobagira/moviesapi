@@ -2,9 +2,9 @@ import mongoose from 'mongoose';
 
 const movieListSchema = new mongoose.Schema(
   {
-    userId: { type: mongoose.SchemaTypes.UUID, required: true },
+    userId: { type: String, required: true },
     name: { type: String, required: true, unique: true },
-    count: { type: Number, required: true },
+    count: { type: Number, required: true, default: 0 },
   },
   { timestamps: true }
 );

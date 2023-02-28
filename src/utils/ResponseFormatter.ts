@@ -1,6 +1,6 @@
 import { Response } from 'express';
 interface ApiResponse {
-  message: string;
+  message?: string;
   status?: number;
 }
 interface SuccessResponse extends ApiResponse {

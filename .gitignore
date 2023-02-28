@@ -4,3 +4,6 @@ node_modules
 
 local.env
 .env
+
+coverage
+.nyc_output

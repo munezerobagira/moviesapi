@@ -10,11 +10,12 @@ export async function createMovieList({ name, userId }: MovieListInterface) {
   return createdPlaylist;
 }
 export async function getUserLists(userId: string) {
-  const createdPlaylist = await MovieList.create({
+  const fetchedLists = await MovieList.find({
     userId,
   });
-  return createdPlaylist;
+  return fetchedLists;
 }
+
 export async function addMovieToList({ listId, movieId, userId }: UserMoviesInterface) {
   const movieList = await MovieList.findOne({
     id: listId,
