@@ -27,5 +27,7 @@ Feature
 
 Used simple JWT Bear Authentication
 
+`VS CODE` for debugging and development
+
 Checkout on the swagger documentation of on link below
 [Live link](https://top-100-movies-api.up.railway.app/api-docs)

@@ -142,7 +142,7 @@ export const swaggerDocument = {
         parameters: [
           {
             name: 'movieId',
-            in: 'paramater',
+            in: 'path',
             description: 'Movie id',
             required: true,
             schema: {
@@ -161,48 +161,212 @@ export const swaggerDocument = {
         },
       },
     },
-    '/users': {
-      get: {
-        tags: ['Users'],
-        summary: 'Endpoint for getting all the users',
-        operationId: 'get-users',
-        securityShemes: {},
+    '/list/': {
+      post: {
+        tags: ['MovieList'],
+        summary: 'Endpoint for creating movie lisst',
+        operationId: 'Create list',
+        requestBody: {
+          description: 'Login credentials',
+          content: {
+            'application/json': {
+              schema: {
+                $ref: '#/components/schemas/list',
+              },
+            },
+          },
+          required: true,
+        },
+        security: [
+          {
+            bearerToken: [],
+          },
+        ],
         responses: {
           '200': {
-            description: 'User were fetched successfully',
+            description: 'Movie list created successfuly',
+          },
+          '400': {
+            description: 'Invalid data were given',
           },
           '404': {
             description: 'Endpoint is not found',
           },
         },
       },
-      put: {
-        tags: ['sample'],
-        summary: 'endpoint to test if server is up',
-        operationId: 'sample-put',
+      get: {
+        tags: ['MovieList'],
+        summary: 'Endpoint for getting movie lists',
+        operationId: 'get list',
+        requestBody: {},
+        security: [
+          {
+            bearerToken: [],
+          },
+        ],
         responses: {
           '200': {
-            description: 'Server is up',
+            description: 'Movie list created successfuly',
+          },
+          '404': {
+            description: 'Endpoint is not found',
           },
         },
       },
-      patch: {
-        tags: ['sample'],
-        summary: 'endpoint to test if server is up',
-        operationId: 'sample-patch',
+    },
+    '/list/{listId}': {
+      post: {
+        tags: ['MovieList'],
+        summary: 'Endpoint for adding movie to list ',
+        operationId: 'Add movie to a list',
+        parameters: [
+          {
+            name: 'listId',
+            in: 'path',
+            description: 'List id',
+            required: true,
+            schema: {
+              type: 'string',
+            },
+          },
+        ],
+        requestBody: {
+          description: 'Login credentials',
+          content: {
+            'application/json': {
+              schema: {
+                $ref: '#/components/schemas/movie',
+              },
+            },
+          },
+          required: true,
+        },
+        security: [
+          {
+            bearerToken: [],
+          },
+        ],
         responses: {
           '200': {
-            description: 'Server is up',
+            description: 'Movie list created successfuly',
+          },
+          '400': {
+            description: 'Invalid data were given',
+          },
+          '404': {
+            description: 'Endpoint is not found',
+          },
+        },
+      },
+      get: {
+        tags: ['MovieList'],
+        summary: 'Endpoint for getting movie lists',
+        operationId: 'get list',
+        requestBody: {},
+        security: [
+          {
+            bearerToken: [],
+          },
+        ],
+        responses: {
+          '200': {
+            description: 'Movie list created successfuly',
+          },
+          '404': {
+            description: 'Endpoint is not found',
+          },
+        },
+      },
+    },
+    '/list/{listId}/{movieId}': {
+      patch: {
+        tags: ['MovieList'],
+        summary: 'Endpoint updating movie lank ',
+        operationId: 'Update movie ranck',
+        parameters: [
+          {
+            name: 'listId',
+            in: 'path',
+            description: 'List id',
+            required: true,
+            schema: {
+              type: 'string',
+            },
+          },
+          {
+            name: 'movieId',
+            in: 'path',
+            description: 'Movie id',
+            required: true,
+            schema: {
+              type: 'string',
+            },
+          },
+        ],
+        requestBody: {
+          description: 'Login credentials',
+          content: {
+            'application/json': {
+              schema: {
+                $ref: '#/components/schemas/movie',
+              },
+            },
+          },
+          required: true,
+        },
+        security: [
+          {
+            bearerToken: [],
+          },
+        ],
+        responses: {
+          '200': {
+            description: 'Movie rank updated successfully',
+          },
+          '400': {
+            description: 'Invalid data were given',
+          },
+          '404': {
+            description: 'Endpoint is not found',
           },
         },
       },
       delete: {
-        tags: ['sample'],
-        summary: 'endpoint to test if server is up',
-        operationId: 'sample-delete',
+        tags: ['MovieList'],
+        summary: 'Endpoint for removing movie lists',
+        operationId: 'remove movie from list',
+        requestBody: {},
+        security: [
+          {
+            bearerToken: [],
+          },
+        ],
+        parameters: [
+          {
+            name: 'listId',
+            in: 'path',
+            description: 'List id',
+            required: true,
+            schema: {
+              type: 'string',
+            },
+          },
+          {
+            name: 'movieId',
+            in: 'path',
+            description: 'Movie id',
+            required: true,
+            schema: {
+              type: 'string',
+            },
+          },
+        ],
         responses: {
           '200': {
-            description: 'Server is up',
+            description: 'Movie deleted successfuly',
+          },
+          '404': {
+            description: 'Endpoint is not found',
           },
         },
       },
@@ -319,12 +483,36 @@ export const swaggerDocument = {
           name: 'John doe',
         },
       },
+      list: {
+        required: ['name'],
+        type: 'object',
+        properties: {
+          name: {
+            type: 'string',
+          },
+        },
+        example: {
+          name: 'My Top 100 Horror movie',
+        },
+      },
+      movie: {
+        required: ['name'],
+        type: 'object',
+        properties: {
+          movieId: {
+            type: 'number',
+          },
+        },
+        example: {
+          movieId: 646389,
+        },
+      },
     },
     securitySchemes: {
       bearerToken: {
-        type: 'apiKey',
-        name: 'Authorization',
-        in: 'header',
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
       },
     },
   },
