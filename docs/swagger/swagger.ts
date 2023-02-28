@@ -110,7 +110,7 @@ export const swaggerDocument = {
     '/movies/search': {
       get: {
         tags: ['Movies'],
-        summary: 'Endpoint for getting all the users',
+        summary: 'Endpoint for searching movies by keywords',
         operationId: 'search-movies',
         parameters: [
           {
@@ -137,7 +137,7 @@ export const swaggerDocument = {
     '/movies/{movieId}': {
       get: {
         tags: ['Movies'],
-        summary: 'Endpoint for getting all the users',
+        summary: 'Endpoint for getting movie by id',
         operationId: 'get-users',
         parameters: [
           {
@@ -161,7 +161,7 @@ export const swaggerDocument = {
         },
       },
     },
-    '/list/': {
+    '/lists/': {
       post: {
         tags: ['MovieList'],
         summary: 'Endpoint for creating movie lisst',
@@ -214,7 +214,7 @@ export const swaggerDocument = {
         },
       },
     },
-    '/list/{listId}': {
+    '/lists/{listId}': {
       post: {
         tags: ['MovieList'],
         summary: 'Endpoint for adding movie to list ',
@@ -278,7 +278,7 @@ export const swaggerDocument = {
         },
       },
     },
-    '/list/{listId}/{movieId}': {
+    '/lists/{listId}/{movieId}': {
       patch: {
         tags: ['MovieList'],
         summary: 'Endpoint updating movie lank ',
@@ -373,7 +373,7 @@ export const swaggerDocument = {
     },
     '/sample': {
       get: {
-        tags: ['sample'],
+        tags: ['Sample'],
         summary: 'endpoint to test if server is up',
         operationId: 'sample-get',
         responses: {
@@ -383,7 +383,7 @@ export const swaggerDocument = {
         },
       },
       post: {
-        tags: ['sample'],
+        tags: ['Sample'],
         summary: 'endpoint to test if server is up',
         operationId: 'sample-post',
         responses: {
@@ -393,7 +393,7 @@ export const swaggerDocument = {
         },
       },
       put: {
-        tags: ['sample'],
+        tags: ['Sample'],
         summary: 'endpoint to test if server is up',
         operationId: 'sample-put',
         responses: {
@@ -403,7 +403,7 @@ export const swaggerDocument = {
         },
       },
       patch: {
-        tags: ['sample'],
+        tags: ['Sample'],
         summary: 'endpoint to test if server is up',
         operationId: 'sample-patch',
         responses: {
@@ -413,7 +413,7 @@ export const swaggerDocument = {
         },
       },
       delete: {
-        tags: ['sample'],
+        tags: ['Sample'],
         summary: 'endpoint to test if server is up',
         operationId: 'sample-delete',
         responses: {
