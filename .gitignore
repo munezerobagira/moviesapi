@@ -7,3 +7,5 @@ local.env
 
 coverage
 .nyc_output
+
+logs

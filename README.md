@@ -14,3 +14,13 @@ Feature
 - user can delete the list
 - user can delete his account
 - user can update his information
+
+# Stack used and Development
+
+- Typescript
+- MongoDB
+- Express
+- Mocha and Chai for API Testing
+- Swagger for documentation
+
+Used simple JWT Bear Authentication

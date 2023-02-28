@@ -26,6 +26,14 @@ export const swaggerDocument = {
       name: 'sample',
       description: 'Endpoints for sample requests',
     },
+    {
+      name: 'Movies',
+      description: 'Endpoints for fetching and getting movies',
+    },
+    {
+      name: 'MovieList',
+      description: 'Endpoints for fetching and getting movies',
+    },
   ],
   paths: {
     '/sample': {
@@ -75,6 +83,19 @@ export const swaggerDocument = {
         operationId: 'sample-delete',
         responses: {
           '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+    },
+    '/auth/login': {
+      post: {
+        tags: ['Authentication'],
+        summary: 'Endpoint for logging in',
+        operationId: 'login',
+        requestBody: {},
+        responses: {
+          '201': {
             description: 'Server is up',
           },
         },
@@ -137,20 +158,90 @@ export const swaggerDocument = {
         },
       },
     },
+    '/movies': {
+      get: {
+        tags: ['Users'],
+        summary: 'Endpoint for getting all the users',
+        operationId: 'get-users',
+        securityShemes: {},
+        responses: {
+          '200': {
+            description: 'User were fetched successfully',
+          },
+          '404': {
+            description: 'Endpoint is not found',
+          },
+        },
+      },
+      post: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'signup-user',
+        requestBody: {},
+        responses: {
+          '201': {
+            description: 'Server is up',
+          },
+        },
+      },
+      put: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-put',
+        responses: {
+          '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+      patch: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-patch',
+        responses: {
+          '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+      delete: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-delete',
+        responses: {
+          '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+    },
+    '/movies/{}': {
+      get: {
+        tags: ['Movies'],
+        summary: 'Endpoint for getting all the users',
+        operationId: 'get-movie',
+        securityShemes: {},
+        responses: {
+          '200': {
+            description: 'Fetching movies was successfully',
+          },
+          '404': {
+            description: 'Endpoint is not found',
+          },
+        },
+      },
+    },
   },
   components: {
     schemas: {
-      userMessage: {
-        required: ['email', 'message', 'name'],
+      user: {
+        required: ['email', 'password', 'name'],
         type: 'object',
         properties: {
           email: {
             type: 'string',
           },
-          subject: {
-            type: 'string',
-          },
-          message: {
+          password: {
             type: 'string',
           },
           name: {
@@ -159,9 +250,8 @@ export const swaggerDocument = {
         },
         example: {
           name: 'John Doe',
-          subject: 'A sending you a wonderful email',
           email: 'johndoe@example.com',
-          message: 'I just wanted you to see this email',
+          password: 'testing',
         },
       },
     },
