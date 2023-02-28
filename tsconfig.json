@@ -18,6 +18,6 @@
     "types": ["node", "mocha"],
     "paths": {}
   },
-  "include": ["./src/**/*", "docs/swagger", "docs/docs.ts", "docs/docs.ts"],
+  "include": ["./src/**/*", "docs/**/*"],
   "exclude": ["./dist/**/*"]
 }

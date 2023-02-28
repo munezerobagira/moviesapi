@@ -215,22 +215,22 @@ export const swaggerDocument = {
         },
       },
     },
-    '/movies/{}': {
-      get: {
-        tags: ['Movies'],
-        summary: 'Endpoint for getting all the users',
-        operationId: 'get-movie',
-        securityShemes: {},
-        responses: {
-          '200': {
-            description: 'Fetching movies was successfully',
-          },
-          '404': {
-            description: 'Endpoint is not found',
-          },
-        },
-      },
-    },
+    // '/movies': {
+    //   get: {
+    //     tags: ['Movies'],
+    //     summary: 'Endpoint for getting all the users',
+    //     operationId: 'get-movie',
+    //     securityShemes: {},
+    //     responses: {
+    //       '200': {
+    //         description: 'Fetching movies was successfully',
+    //       },
+    //       '404': {
+    //         description: 'Endpoint is not found',
+    //       },
+    //     },
+    //   },
+    // },
   },
   components: {
     schemas: {
