@@ -10,6 +10,9 @@ export const swaggerDocument = {
   },
   servers: [
     {
+      url: '/',
+    },
+    {
       url: 'http://localhost:{port}',
       variables: {
         port: {
@@ -17,9 +20,7 @@ export const swaggerDocument = {
         },
       },
     },
-    {
-      url: '/',
-    },
+    s,
   ],
   tags: [
     {
@@ -34,60 +35,16 @@ export const swaggerDocument = {
       name: 'MovieList',
       description: 'Endpoints for fetching and getting movies',
     },
+    {
+      name: 'Authentication',
+      description: 'Endpoints for fetching and getting movies',
+    },
+    {
+      name: 'User',
+      description: 'Endpoints for fetching and getting movies',
+    },
   ],
   paths: {
-    '/sample': {
-      get: {
-        tags: ['sample'],
-        summary: 'endpoint to test if server is up',
-        operationId: 'sample-get',
-        responses: {
-          '200': {
-            description: 'Server is up',
-          },
-        },
-      },
-      post: {
-        tags: ['sample'],
-        summary: 'endpoint to test if server is up',
-        operationId: 'sample-post',
-        responses: {
-          '201': {
-            description: 'Server is up',
-          },
-        },
-      },
-      put: {
-        tags: ['sample'],
-        summary: 'endpoint to test if server is up',
-        operationId: 'sample-put',
-        responses: {
-          '200': {
-            description: 'Server is up',
-          },
-        },
-      },
-      patch: {
-        tags: ['sample'],
-        summary: 'endpoint to test if server is up',
-        operationId: 'sample-patch',
-        responses: {
-          '200': {
-            description: 'Server is up',
-          },
-        },
-      },
-      delete: {
-        tags: ['sample'],
-        summary: 'endpoint to test if server is up',
-        operationId: 'sample-delete',
-        responses: {
-          '200': {
-            description: 'Server is up',
-          },
-        },
-      },
-    },
     '/auth/login': {
       post: {
         tags: ['Authentication'],
@@ -178,6 +135,58 @@ export const swaggerDocument = {
         summary: 'endpoint to test if server is up',
         operationId: 'signup-user',
         requestBody: {},
+        responses: {
+          '201': {
+            description: 'Server is up',
+          },
+        },
+      },
+      put: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-put',
+        responses: {
+          '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+      patch: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-patch',
+        responses: {
+          '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+      delete: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-delete',
+        responses: {
+          '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+    },
+    '/sample': {
+      get: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-get',
+        responses: {
+          '200': {
+            description: 'Server is up',
+          },
+        },
+      },
+      post: {
+        tags: ['sample'],
+        summary: 'endpoint to test if server is up',
+        operationId: 'sample-post',
         responses: {
           '201': {
             description: 'Server is up',

@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/munezerobagira/moviesapi/badge.svg)](https://coveralls.io/github/munezerobagira/moviesapi)
+
 # MyTop100Movies
 
 Just an API that which lets users set their top 100 movies list.
