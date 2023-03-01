@@ -263,6 +263,17 @@ export const swaggerDocument = {
         summary: 'Endpoint for getting movie lists',
         operationId: 'get list',
         requestBody: {},
+        parameters: [
+          {
+            name: 'listId',
+            in: 'path',
+            description: 'List id',
+            required: true,
+            schema: {
+              type: 'string',
+            },
+          },
+        ],
         security: [
           {
             bearerToken: [],
@@ -281,8 +292,8 @@ export const swaggerDocument = {
     '/lists/{listId}/{movieId}': {
       patch: {
         tags: ['MovieList'],
-        summary: 'Endpoint updating movie lank ',
-        operationId: 'Update movie ranck',
+        summary: 'Endpoint updating movie rank ',
+        operationId: 'Update movie rank',
         parameters: [
           {
             name: 'listId',
@@ -308,7 +319,7 @@ export const swaggerDocument = {
           content: {
             'application/json': {
               schema: {
-                $ref: '#/components/schemas/movie',
+                $ref: '#/components/schemas/movieRank',
               },
             },
           },
@@ -496,7 +507,7 @@ export const swaggerDocument = {
         },
       },
       movie: {
-        required: ['name'],
+        required: ['movieId'],
         type: 'object',
         properties: {
           movieId: {
@@ -505,6 +516,18 @@ export const swaggerDocument = {
         },
         example: {
           movieId: 646389,
+        },
+      },
+      movieRank: {
+        required: ['rank'],
+        type: 'object',
+        properties: {
+          rank: {
+            type: 'number',
+          },
+        },
+        example: {
+          rank: 1,
         },
       },
     },
