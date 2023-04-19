@@ -13,7 +13,7 @@ export const errorHandler: ErrorRequestHandler = async (error, request, response
 };
 export const notFoundHandler = async (request: Request, response: Response, next: NextFunction) => {
   return onError(response, {
-    message: 'Path not found',
+    message: 'Path not found try /api-docs to get documentation',
     status: 404,
   });
 };

@@ -260,8 +260,8 @@ export const swaggerDocument = {
       },
       get: {
         tags: ['MovieList'],
-        summary: 'Endpoint for getting movie lists',
-        operationId: 'get list',
+        summary: 'Endpoint for getting movies on lists',
+        operationId: 'get list movies',
         requestBody: {},
         parameters: [
           {
